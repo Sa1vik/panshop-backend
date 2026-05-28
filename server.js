@@ -14,6 +14,10 @@ app.use(cors({
   credentials: true,
 }));
 
+app.get('/', (req, res) => {
+    res.status(200).json({ status: "ok", message: "Backend is running flawlessly" });
+  
+});
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/customers', require('./routes/customerRoutes'));
 app.use('/api/transactions', require('./routes/transactionRoutes'));
